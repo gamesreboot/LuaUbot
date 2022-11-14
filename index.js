@@ -2,11 +2,18 @@ import express from "express"
 import { join } from "path";
 import { Low, JSONFile } from "lowdb";
 import { Client, GatewayIntentBits, REST, Routes, Events } from "discord.js"
-
 const token = process.env.TOKEN
 const prefix = ";"
 const app = express();
 const port = 8080;
+const file2 = join("./", "Roles.json")
+const adapter2 = new JSONFile(file2)
+const db2 = new Low(adapter2)
+const file = join("./", "DB.json")
+const adapter = new JSONFile(file)
+const db = new Low(adapter)
+await db.read()
+await db2.read()
 const client = new Client({
 	intents: [
 		GatewayIntentBits.DirectMessages,
@@ -16,15 +23,6 @@ const client = new Client({
 		GatewayIntentBits.MessageContent,
 	]
 });
-
-const file2 = join("./", "Roles.json")
-const adapter2 = new JSONFile(file2)
-const db2 = new Low(adapter2)
-const file = join("./", "DB.json")
-const adapter = new JSONFile(file)
-const db = new Low(adapter)
-await db.read()
-await db2.read()
 
 function between(min, max) {
 	return Math.floor(
