@@ -50,7 +50,7 @@ client.on("messageCreate", msg => {
 	}
 	if (UD) {
 		if (Date.now() - UD.lastmsg >= 65000) {
-			UD.xp += between(10,12)
+			UD.xp += between(10, 12)
 			UD.lastmsg = Date.now();
 			if (UD.xp > (UD.Levels * 112) && UD.xp < ((UD.Levels + 1) * 112)) {
 				UD.Levels += 1
