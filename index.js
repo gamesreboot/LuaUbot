@@ -1,18 +1,7 @@
 import express from "express"
-import {
-	join
-} from "path";
-import {
-	Low,
-	JSONFile
-} from "lowdb";
-import {
-  Client,
-  GatewayIntentBits,
-  REST,
-  Routes,
-  Events
-} from "discord.js"
+import { join } from "path";
+import { Low, JSONFile } from "lowdb";
+import { Client, GatewayIntentBits, REST, Routes,Events } from "discord.js"
 const prefix = ";"
 const app = express();
 const port = 8080;
