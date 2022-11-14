@@ -2,6 +2,8 @@ import express from "express"
 import { join } from "path";
 import { Low, JSONFile } from "lowdb";
 import { Client, GatewayIntentBits, REST, Routes, Events } from "discord.js"
+
+const token = process.env.TOKEN
 const prefix = ";"
 const app = express();
 const port = 8080;
@@ -14,7 +16,6 @@ const client = new Client({
 		GatewayIntentBits.MessageContent,
 	]
 });
-
 
 const file2 = join("./", "Roles.json")
 const adapter2 = new JSONFile(file2)
@@ -30,8 +31,6 @@ function between(min, max) {
 		Math.random() * (max - min) + min
 	)
 }
-
-const token = process.env.TOKEN
 
 client.on("messageCreate", msg => {
 	let data = db.data;
