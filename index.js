@@ -102,7 +102,7 @@ client.on("messageCreate", msg => {
 				embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: ${user.username}`,
+					"description": `current stats\nid: ${arg} \nXP: ${data.xp}\nLEVEL: ${data.Levels}\nUsername: ${user.username}`,
 					"color": 0x0073ff,
 				}]
 			})
@@ -111,7 +111,7 @@ client.on("messageCreate", msg => {
 				embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: Username Not Found`,
+					"description": `current stats\nid: ${arg} \nXP: ${data.xp}\nLEVEL: ${data.Levels}\nUsername: Username Not Found`,
 					"color": 0x0073ff,
 				}]
 			})
@@ -230,7 +230,7 @@ client.on(Events.InteractionCreate, interaction => {
 				embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: ${user.username}`,
+					"description": `current stats\nid: ${arg} \nXP: ${data.xp}\nLEVEL: ${data.Levels}\nUsername: ${user.username}`,
 					"color": 0x0073ff,
 				}]
 	 		});
@@ -239,7 +239,7 @@ client.on(Events.InteractionCreate, interaction => {
 			  	embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: Username Not Found`,
+					"description": `current stats\nid: ${arg} \nXP: ${data.xp}\nLEVEL: ${data.Levels}\nUsername: Username Not Found`,
 					"color": 0x0073ff,
 				}]
 			});
