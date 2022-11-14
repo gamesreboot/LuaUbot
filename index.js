@@ -56,7 +56,7 @@ client.on("messageCreate", msg => {
 			UD.lastmsg = Date.now();
 			if (UD.xp > (UD.Levels * 112) && UD.xp < ((UD.Levels + 1) * 112)) {
 				UD.Levels += 1
-				msg.channel.send("<@" + msg.author.id + ">" + ", you advanced to level " + UD.Levels + ".")
+				msg.channel.send(`<@${msg.author.id}>, you advanced to level ${UD.Levels}.`)
 				for (const v in db2.data) {
 					if (UD.Levels >= db2.data[v].level) {
 						let role = msg.guild.roles.cache.find(role => role.id === db2.data[v].ID.toString());
@@ -102,7 +102,7 @@ client.on("messageCreate", msg => {
 				embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": "current stats\nid: " + arg + " \nXP: " + data.xp + "\nLEVEL: " + data.Levels + "\nUsername: " + user.username,
+					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: ${user.username}`,
 					"color": 0x0073ff,
 				}]
 			})
@@ -111,7 +111,7 @@ client.on("messageCreate", msg => {
 				embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": "current stats\nid: " + arg + " \nXP: " + data.xp + "\nLEVEL: " + data.Levels + "\nUsername: " + "username not found",
+					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: Username Not Found`,
 					"color": 0x0073ff,
 				}]
 			})
@@ -173,7 +173,7 @@ client.on("messageCreate", msg => {
 				embeds: [{
 					"type": "rich",
 					"title": `Purged`,
-					"description": "Purged " + args[0] + " Messages.",
+					"description": `Purged ${args[0]} Messages.`,
 					"color": 0x0073ff
 				}]
 			}).then(a => setTimeout(function() {
@@ -230,7 +230,7 @@ client.on(Events.InteractionCreate, interaction => {
 				embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": "current stats\nid: " + arg + " \nXP: " + data.xp + "\nLEVEL: " + data.Levels + "\nUsername: " + user.username,
+					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: ${user.username}`,
 					"color": 0x0073ff,
 				}]
 	 		});
@@ -239,7 +239,7 @@ client.on(Events.InteractionCreate, interaction => {
 			  	embeds: [{
 					"type": "rich",
 					"title": `Users Rank`,
-					"description": "current stats\nid: " + arg + " \nXP: " + data.xp + "\nLEVEL: " + data.Levels + "\nUsername: " + "username not found",
+					"description": `current stats\nid: ${arg} \nXP:${data.xp}\nLEVEL: ${data.Levels}\nUsername: Username Not Found`,
 					"color": 0x0073ff,
 				}]
 			});
@@ -253,7 +253,7 @@ client.on(Events.ClientReady, c => {
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
-(async ()=>{
+(async () => {
   	await client.login(token).catch((err) => {
 		throw err;
   	});
